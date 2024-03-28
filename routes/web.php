@@ -17,6 +17,18 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/testing', function () {
-    return view('testing');
+Route::get('/home', function () {
+    return view('home');
+});
+
+Route::get('/pegawai', function () {
+    return view('pegawai');
+});
+
+Route::get('/jabatan', function () {
+    return view('jabatan');
+});
+
+Route::get('/pendidikan', function () {
+    return view('pendidikan');
 });
