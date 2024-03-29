@@ -10,7 +10,7 @@
         <div class="collapse navbar-collapse  w-auto " id="sidenav-collapse-main">
             <ul class="navbar-nav">
                 <li class="nav-item">
-                    <a class="nav-link active" href="home">
+                    <a class="nav-link {{ request()->route()->getName() === 'home' ? 'active' : '' }}" href="home">
                         <div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
                             <i class="ni ni-tv-2 text-primary text-sm opacity-10"></i>
                         </div>
@@ -18,7 +18,7 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="pegawai">
+                    <a class="nav-link {{ request()->route()->getName() === 'pegawai' ? 'active' : '' }}" href="pegawai">
                         <div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
                             <i class="ni ni-single-02 text-warning text-sm opacity-10"></i>
                         </div>
@@ -26,7 +26,7 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link " href="jabatan">
+                    <a class="nav-link {{ request()->route()->getName() === 'jabatan' ? 'active' : '' }}" href="jabatan">
                         <div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
                             <i class="ni ni-chart-bar-32 text-success text-sm opacity-10"></i>
                         </div>
@@ -34,7 +34,7 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link " href="pendidikan">
+                    <a class="nav-link {{ request()->route()->getName() === 'pendidikan' ? 'active' : '' }}" href="pendidikan">
                         <div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
                             <i class="ni ni-hat-3 text-info text-sm opacity-10"></i>
                         </div>
@@ -83,9 +83,30 @@
                 <nav aria-label="breadcrumb">
                     <ol class="breadcrumb bg-transparent mb-0 pb-0 pt-1 px-0 me-sm-6 me-5">
                         <li class="breadcrumb-item text-sm"><a class="opacity-5 text-white" href="javascript:;">Pages</a></li>
-                        <li class="breadcrumb-item text-sm text-white active" aria-current="page">Home</li>
-                    </ol>
-                    <h6 class="font-weight-bolder text-white mb-0">Home</h6>
+                        <li class="breadcrumb-item text-sm text-white {{ request()->route()->getName() === 'home' ? 'active' : '' }}" aria-current="page">
+                    <a href="{{ route('home') }}">Home</a>
+                </li>
+                <li class="breadcrumb-item text-sm text-white {{ request()->route()->getName() === 'pegawai' ? 'active' : '' }}" aria-current="page">
+                    <a href="{{ route('pegawai') }}">Profile</a>
+                </li>
+                <li class="breadcrumb-item text-sm text-white {{ request()->route()->getName() === 'jabatan' ? 'active' : '' }}" aria-current="page">
+                    <a href="{{ route('jabatan') }}">Jabatan</a>
+                </li>
+                <li class="breadcrumb-item text-sm text-white {{ request()->route()->getName() === 'page4' ? 'active' : '' }}" aria-current="page">
+                    <a href="{{ route('pendidikan') }}">Pendidikan</a>
+                </li>
+            </ol>
+            <h6 class="font-weight-bolder text-white mb-0">
+                @if(request()->route()->getName() === 'home')
+                    Home
+                @elseif(request()->route()->getName() === 'pegawai')
+                    Profile
+                @elseif(request()->route()->getName() === 'jabatan')
+                    Jabatan
+                @elseif(request()->route()->getName() === 'pendidikan')
+                    Pendidikan
+                @endif
+            </h6>
                 </nav>
                 <div class="collapse navbar-collapse mt-sm-0 mt-2 me-md-0 me-sm-4" id="navbar">
                     <div class="ms-md-auto pe-md-3 d-flex align-items-center">
