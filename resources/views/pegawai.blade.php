@@ -56,7 +56,7 @@
               </div>
             </div>
             <div class="card-body">
-              <p class="text-uppercase text-sm">Informasi Pengguna</p>
+              <p class="text-uppercase text-sm">DATA PEGAWAI</p>
               <div class="row">
                 <div class="col-md-6">
                   <div class="form-group">
@@ -73,7 +73,7 @@
                 <div class="col-md-6">
                   <div class="form-group">
                     <label for="example-text-input" class="form-control-label">Pendidikan</label>
-                    <input class="form-control" type="text" value="Universitas Indonesia">
+                    <input class="form-control" type="text" value="S1 Akutansi, Universitas Indonesia">
                   </div>
                 </div>
                 <div class="col-md-6">
